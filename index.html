@@ -241,6 +241,81 @@ muteBtn.addEventListener('click',()=>{
 
 <script>
 // Entrance typewriter
+<script>
+// 🌹 Entrance overlay + typewriter + rose animation
 (function(){
-  const overlay=document.getElementById('entranceOverlay');
-  const yes
+  const overlay = document.getElementById('entranceOverlay');
+  const yesBtn = document.getElementById('entranceYes');
+  const noBtn = document.getElementById('entranceNo');
+  const text = "This page is only for you, Saffiya. Take a deep breath, and enter when you're ready. 🌹";
+  const typeEl = document.getElementById('typeLine');
+  let i = 0;
+
+  function typeWriter() {
+    if (i < text.length) {
+      typeEl.innerHTML = text.substring(0, i + 1) + '<span class="cursor" style="border-right:2px solid #e64242;padding-right:2px;"></span>';
+      i++;
+      setTimeout(typeWriter, 60);
+    } else {
+      typeEl.innerHTML = text;
+    }
+  }
+  typeWriter();
+
+  // Proceed button
+  yesBtn.addEventListener('click', () => {
+    overlay.style.transition = 'opacity 0.8s ease';
+    overlay.style.opacity = '0';
+    setTimeout(() => {
+      overlay.style.display = 'none';
+      startRoses();
+    }, 800);
+  });
+
+  // Exit button
+  noBtn.addEventListener('click', () => {
+    overlay.innerHTML = '<p style="font-size:1.3rem;">It’s okay, come back anytime 🌹</p>';
+    setTimeout(() => overlay.style.display = 'none', 1500);
+  });
+
+  // Rose animation
+  function startRoses() {
+    setInterval(() => {
+      const rose = document.createElement('div');
+      rose.className = 'rose';
+      rose.style.left = Math.random() * 100 + 'vw';
+      rose.style.animationDuration = (5 + Math.random() * 5) + 's';
+      document.body.appendChild(rose);
+      setTimeout(() => rose.remove(), 10000);
+    }, 500);
+  }
+})();
+
+// 💌 Unlock form (passcode)
+document.getElementById('unlockForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const input = document.getElementById('passcode').value.trim().toLowerCase();
+  const msg = document.getElementById('unlockMsg');
+  if(input === 'nasi goreng tomyam'){
+    msg.textContent = 'Unlocked! 💌';
+    document.getElementById('letters').classList.remove('hidden');
+  } else {
+    msg.textContent = 'Wrong passcode 😢';
+  }
+});
+
+// 📝 Add notes
+document.getElementById('noteForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const text = document.getElementById('noteText').value.trim();
+  const msg = document.getElementById('noteMsg');
+  if(!text){msg.textContent='Type something first 💬';return;}
+  msg.textContent='Added! 💖';
+  document.getElementById('noteText').value='';
+  const newNote = document.createElement('div');
+  newNote.className='letter';
+  newNote.innerHTML='<div class="tag">Note</div><p>'+text+'</p>';
+  document.getElementById('lettersGrid').appendChild(newNote);
+  document.getElementById('letters').classList.remove('hidden');
+});
+</script>
