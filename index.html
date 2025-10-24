@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>For Saffiya — From Danial</title>
+<meta name="description" content="A red-rose corner of the web for Saffiya — love letters, doa, and memories." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#fff5f5;
+  --surface:#ffecec;
+  --text:#3a1f1f;
+  --muted:#704545;
+  --accent:#e64242;
+  --accent-2:#ff7b7b;
+  --ring:rgba(230,66,66,.3);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  color:var(--text);
+  background:
+    radial-gradient(900px 600px at 15% 10%,#ffe0e0 0%,transparent 60%),
+    radial-gradient(900px 700px at 85% 90%,#ffd2d2 0%,transparent 60%),
+    var(--bg);
+  line-height:1.6;overflow-x:hidden;
+}
+.container{width:min(1080px,92%);margin-inline:auto}
+header{
+  position:sticky;top:0;z-index:10;backdrop-filter:saturate(120%) blur(8px);
+  background:linear-gradient(180deg,rgba(255,255,255,.8),rgba(255,255,255,.3),transparent);
+  border-bottom:1px solid #ffc7c7;
+}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{font-weight:700;letter-spacing:.6px}
+.brand span{color:var(--accent)}
+.btn{
+  display:inline-flex;gap:.5rem;align-items:center;justify-content:center;
+  padding:.7rem 1rem;border-radius:12px;border:1px solid transparent;
+  font-weight:600;cursor:pointer;transition:.2s ease;
+}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;}
+.btn.primary:hover{transform:translateY(-1px);box-shadow:0 10px 28px var(--ring);}
+.btn.ghost{border:1px solid var(--accent);color:var(--text);background:transparent}
+.btn.ghost:hover{background:#fff2f2}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding:64px 0 28px}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif}
+h1{font-size:clamp(2rem,3.6vw,3.2rem);margin:.2rem 0 .5rem}
+h2{font-size:clamp(1.5rem,2.6vw,2.1rem);margin:0 0 .75rem}
+h3{font-size:clamp(1.1rem,1.6vw,1.25rem);margin:.25rem 0 .35rem}
+.lead{color:var(--muted);font-size:1.05rem}
+.cta{display:flex;gap:.6rem;margin-top:.75rem}
+.card{
+  background:linear-gradient(180deg,#fff,#ffecec);
+  border:1px solid #ffc7c7;border-radius:16px;padding:16px;
+  box-shadow:0 10px 26px rgba(230,66,66,.16);
+}
+.mini{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
+.mini div{background:#fff;border:1px solid #ffd6d6;border-radius:12px;padding:10px}
+.mini strong{display:block}
+.unlock{padding:14px 0 6px}
+.unlock p{color:var(--muted);margin:.2rem 0 1rem}
+.unlock-form{display:flex;gap:.6rem;flex-wrap:wrap}
+.unlock-form input{
+  flex:1 1 240px;padding:.85rem 1rem;border-radius:12px;
+  border:1px solid #ffc7c7;background:#fff;color:var(--text);
+}
+.unlock-msg{margin-left:.4rem;color:var(--accent);font-weight:600}
+.section{padding:26px 0}
+.letters-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.letter{border:1px solid #ffc7c7;border-radius:14px;padding:14px;background:#fff}
+.letter .tag{font-size:.75rem;color:var(--muted);margin-bottom:.2rem}
+.letter p{color:var(--muted)}
+.read{display:inline-flex;gap:.35rem;align-items:center;color:var(--accent);font-weight:600}
+.hidden{display:none}
+.quote{margin:12px 0;padding:16px;border:1px solid #ffc7c7;border-radius:14px;background:#fff}
+.quote blockquote{margin:0 0 .35rem;font-size:1.15rem}
+.quote .tr{color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px}
+figure{margin:0;overflow:hidden;border-radius:12px;border:1px solid #ffc7c7;background:#fff}
+img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
+figcaption{padding:8px 10px;color:var(--muted);font-size:.85rem}
+.note-form{display:grid;gap:.6rem}
+textarea{width:100%;min-height:110px;resize:vertical;padding:12px 14px;border-radius:12px;border:1px solid #ffc7c7;background:#fff;color:var(--text)}
+.note-msg{color:var(--accent)}
+footer{padding:28px 0 40px;text-align:center;color:var(--muted)}
+@media(max-width:860px){.hero{grid-template-columns:1fr}}
+/* 🌹 rose animation */
+.rose{
+  position:fixed;top:-10vh;width:28px;height:28px;background:transparent;
+  pointer-events:none;animation:roseFall linear forwards;
+}
+.rose::before{
+  content:"🌹";font-size:24px;display:block;
+}
+@keyframes roseFall{
+  0%{transform:translateY(0) rotate(0deg);opacity:1;}
+  100%{transform:translateY(110vh) rotate(360deg);opacity:0;}
+}
+</style>
+</head>
+<body>
+
+<!-- Entrance Overlay -->
+<div id="entranceOverlay" style="position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(1200px 800px at 20% 10%,#fff0f0 0%,transparent 60%),radial-gradient(1200px 900px at 80% 90%,#ffe0e0 0%,transparent 60%),rgba(255,245,245,.95);">
+  <div style="max-width:860px;width:92%;background:#fff;border:1px solid #ffc7c7;border-radius:18px;box-shadow:0 26px 60px rgba(230,66,66,.25);padding:28px 22px;text-align:center;">
+    <div style="font-family:'Playfair Display',serif;font-size:1rem;color:#704545;letter-spacing:.15em;text-transform:uppercase;">for Saffiya</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:2rem;margin:.25rem 0 .35rem;color:#3a1f1f;">Before you come in…</h2>
+    <p id="typeLine" style="margin:.5rem auto 1rem;max-width:620px;color:#704545;font-size:1.05rem;line-height:1.7;"><span class="cursor" style="border-right:2px solid #e64242;padding-right:2px;"></span></p>
+    <p style="margin:.1rem auto 1rem;color:#b03535;font-size:.95rem;">I love you Saffiya 🤍</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:.75rem;">
+      <button id="entranceYes" style="padding:12px 18px;border-radius:12px;border:0;background:linear-gradient(90deg,#e64242,#ff7b7b);color:#fff;font-weight:700;cursor:pointer;box-shadow:0 10px 28px rgba(230,66,66,.35);">Proceed</button>
+      <button id="entranceNo" style="padding:12px 18px;border-radius:12px;border:1px solid #ffc7c7;background:#fff;color:#704545;font-weight:600;cursor:pointer;">Not today</button>
+    </div>
+    <p style="color:#9a3d3d;font-size:.85rem;margin-top:12px;">(psst… you’ll need a passcode later 💌)</p>
+  </div>
+</div>
+
+<header>
+  <nav class="container nav">
+    <a class="brand" href="#home">for Saffiya<span>♡</span></a>
+    <a class="btn ghost" href="#letters">Love Letters</a>
+  </nav>
+</header>
+
+<main id="home">
+  <section class="hero container">
+    <div>
+      <h1>Hi Sayang,</h1>
+      <p class="lead">Ini saya bina khas untuk awak. Tempat simpan <em>love letters</em>, doa, dan kenangan kita. Walaupun jarak memisahkan, hati kita tetap dekat.</p>
+      <div class="cta">
+        <a class="btn primary" href="#unlock">Buka Love Letters</a>
+        <a class="btn ghost" href="#dua">Doa & Quotes</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Special for You — Saffiya 🌹</h3>
+      <p>“You are the reason my heart smiles.”</p>
+      <div class="mini">
+        <div><strong>LDR</strong><span>but worth it</span></div>
+        <div><strong>FIRST MET</strong><span>3 / 5 / 2025</span></div>
+        <div><strong>FAV PERSON</strong><span>Danial’s ❤️</span></div>
+        <div><strong>FAV FLOWER</strong><span>red rose</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="unlock" class="container section">
+    <h2>Untuk Saffiya Sahaja</h2>
+    <p>Masukkan kata kunci yang Danial berikan untuk buka Love Letters.</p>
+    <form id="unlockForm" class="unlock-form">
+      <input id="passcode" type="password" placeholder="Enter passcode" autocomplete="off" />
+      <button class="btn primary" type="submit">Unlock</button>
+      <span id="unlockMsg" class="unlock-msg" role="status" aria-live="polite"></span>
+    </form>
+  </section>
+
+  <section id="letters" class="container section hidden">
+    <h2>Love Letters</h2>
+    <div id="lettersGrid" class="letters-grid"></div>
+  </section>
+
+  <section id="dua" class="container section">
+    <h2>Doa & Quotes</h2>
+    <article class="quote">
+      <blockquote>“وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً”</blockquote>
+      <p class="tr">“And He placed between you love and mercy.” — <small>Ar-Rūm 21</small></p>
+    </article>
+    <article class="quote">
+      <blockquote>“اللهم اجعل أيامها القادمة خيرًا من أيامها الماضية، واملأ قلبها بالفرح والسكينة.”</blockquote>
+      <p class="tr">"O Allah, make her coming days better than those that passed, and fill her heart with joy and serenity."</p>
+    </article>
+    <article class="quote">
+      <blockquote>“الحب نورٌ يهتدي به القلب.”</blockquote>
+      <p class="tr">"Love is a light by which the heart finds its way."</p>
+    </article>
+  </section>
+
+  <section id="gallery" class="container section">
+    <h2>Memories</h2>
+    <p class="muted">Letak gambar kita kat sini nanti 💗</p>
+    <div class="grid">
+      <figure><img src="https://picsum.photos/seed/saff1/600/800" alt="Memory"><figcaption>you, in every dua</figcaption></figure>
+      <figure><img src="https://picsum.photos/seed/saff2/600/800" alt="Memory"><figcaption>your smile, my peace</figcaption></figure>
+      <figure><img src="https://picsum.photos/seed/saff3/600/800" alt="Memory"><figcaption>soft moments</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="note" class="container section">
+    <h2>Nota Buat Saffiya</h2>
+    <form id="noteForm" class="note-form">
+      <textarea id="noteText" rows="4" placeholder="Tulis nota ringkas kat sini…"></textarea>
+      <button class="btn primary" type="submit">Tambah Nota</button>
+      <span id="noteMsg" class="note-msg" role="status" aria-live="polite"></span>
+    </form>
+  </section>
+
+  <footer>
+    <div class="container"><p>Made with ❤ by Danial for Saffiya</p></div>
+  </footer>
+</main>
+
+<!-- Music -->
+<div id="yt-container" style="position:fixed;left:-9999px;width:0;height:0;overflow:hidden;"><div id="ytplayer"></div></div>
+<button id="ytPlayPause" style="position:fixed;right:16px;bottom:68px;z-index:99;padding:10px 14px;border:none;border-radius:8px;background:linear-gradient(90deg,#e64242,#ff7b7b);color:#fff;font-weight:600;cursor:pointer;">▶️ Play</button>
+<button id="ytMute" style="position:fixed;right:16px;bottom:16px;z-index:99;padding:10px 14px;border:none;border-radius:8px;background:linear-gradient(90deg,#e64242,#ff7b7b);color:#fff;font-weight:600;cursor:pointer;">🔇 Unmute</button>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+let player,isPlaying=false,isMuted=true;
+function onYouTubeIframeAPIReady(){
+  player=new YT.Player('ytplayer',{
+    width:0,height:0,videoId:'ek3S0I5DLHA',
+    playerVars:{autoplay:1,controls:0,loop:1,playlist:'ek3S0I5DLHA',rel:0,fs:0,modestbranding:1},
+    events:{onReady:(e)=>{e.target.mute();e.target.playVideo();isPlaying=true;isMuted=true;updateButtons();}}
+  });
+}
+const playPauseBtn=document.getElementById('ytPlayPause');
+const muteBtn=document.getElementById('ytMute');
+function updateButtons(){
+  playPauseBtn.textContent=isPlaying?'⏸️ Pause':'▶️ Play';
+  muteBtn.textContent=isMuted?'🔇 Unmute':'🔊 Mute';
+}
+playPauseBtn.addEventListener('click',()=>{
+  if(!player)return;
+  if(isPlaying){player.pauseVideo();isPlaying=false;}
+  else{player.playVideo();isPlaying=true;}
+  updateButtons();
+});
+muteBtn.addEventListener('click',()=>{
+  if(!player)return;
+  if(isMuted){player.unMute();player.setVolume(50);isMuted=false;}
+  else{player.mute();isMuted=true;}
+  updateButtons();
+});
+</script>
+
+<script>
+// Entrance typewriter
+(function(){
+  const overlay=document.getElementById('entranceOverlay');
+  const yes
