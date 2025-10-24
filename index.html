@@ -142,9 +142,9 @@ footer{padding:28px 0 40px;text-align:center;color:var(--muted)}
       <p>“You are the reason my heart smiles.”</p>
       <div class="mini">
         <div><strong>LDR</strong><span>but worth it</span></div>
-        <div><strong>FIRST MET</strong><span>3 / 5 / 2025</span></div>
-        <div><strong>FAV PERSON</strong><span>Danial’s ❤️</span></div>
-        <div><strong>FAV FLOWER</strong><span>red rose</span></div>
+        <div><strong>FIRST MET</strong><span>CUBA TEKA?</span></div>
+        <div><strong>FAV PERSON</strong><span>Danial❤️</span></div>
+        <div><strong>FAV HOBBY</strong><span>makan</span></div>
       </div>
     </div>
   </section>
@@ -161,7 +161,23 @@ footer{padding:28px 0 40px;text-align:center;color:var(--muted)}
 
   <section id="letters" class="container section hidden">
     <h2>Love Letters</h2>
-    <div id="lettersGrid" class="letters-grid"></div>
+    <div id="lettersGrid" class="letters-grid">
+  <div class="letter">
+    <div class="tag">Letter 1</div>
+    <p>Hi sayang 💌,  
+    I made this small corner of the internet just for you. Every word here carries a piece of my heart.</p>
+  </div>
+
+  <div class="letter">
+    <div class="tag">Letter 2</div>
+    <p>No matter how far we are, you’re always close to me. Every night I thank Allah for you. You're my comfort, my peace, my favourite person. 🌹</p>
+  </div>
+
+  <div class="letter">
+    <div class="tag">Letter 3</div>
+    <p>I’ll always choose you, in every lifetime, in every version of this world. You’re my home, Saffiya 🤍</p>
+  </div>
+</div>
   </section>
 
   <section id="dua" class="container section">
@@ -272,7 +288,7 @@ muteBtn.addEventListener('click',()=>{
 
   // Exit button
   noBtn.addEventListener('click', () => {
-    overlay.innerHTML = '<p style="font-size:1.3rem;">It’s okay, come back anytime 🌹</p>';
+    overlay.innerHTML = '<p style="font-size:1.3rem;">KENAPA SEDIH NIIIII HM</p>';
     setTimeout(() => overlay.style.display = 'none', 1500);
   });
 
@@ -298,7 +314,7 @@ document.getElementById('unlockForm').addEventListener('submit', function(e){
     msg.textContent = 'Unlocked! 💌';
     document.getElementById('letters').classList.remove('hidden');
   } else {
-    msg.textContent = 'Wrong passcode 😢';
+    msg.textContent = 'Kata kunci salah. Cuba lagi ya sayang 💗 (Hint: Masakan pertama untuk saya)';
   }
 });
 
